@@ -1,4 +1,4 @@
-package com.practicaljava.lesson6;
+package com.practicaljava.lesson7.tryit;
 
 public interface Payable {
 
