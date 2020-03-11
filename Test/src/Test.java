@@ -1,20 +1,17 @@
 
 public class Test {
+    public Test() {
+	// TODO Auto-generated constructor stub
+    }
+
+    public Test(String str) {
+	// TODO Auto-generated method stub
+	this();
+	System.out.println("d");
+	// this();
+    }
 
     public static void main(String[] args) {
-	String gfriend_1 = "Masha";
-	String gfriend_2 = "Masha";
-	if (gfriend_1 == gfriend_2) {
-	    System.out.println("true");
-	} else {
-	    System.out.println("false");
-	}
-	String gfriend1 = new String("Natasha");
-	String gfriend2 = new String("Natasha");
-	if (gfriend1 == gfriend2) {
-	    System.out.println("true");
-	} else {
-	    System.out.println("false");
-	}
+
     }
 }
