@@ -26,7 +26,7 @@ public class BikeVerificationGUI extends JPanel {
     int getBikeQuantity() {
 	try {
 	    return Integer.parseInt(this.quantity.getText());
-	} catch (NumberFormatException e) {
+	} catch (NumberFormatException e1) {
 	    return 0;
 	}
     }

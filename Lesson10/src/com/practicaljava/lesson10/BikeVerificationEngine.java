@@ -10,23 +10,22 @@ public class BikeVerificationEngine implements ActionListener {
 	this.bike = bike;
     }
 
-    private Boolean validate(BikeVerificationGUI bike) {
+    private void validate(BikeVerificationGUI bike) throws TooManyBikeException {
 	int bikeQuantity = bike.getBikeQuantity();
 	int bikeSize = bike.getSelectedBike().getBikeSize();
-	if (bike.getBikeContainerSize() >= bikeQuantity * bikeSize && bikeQuantity != 0) {
-	    return true;
+	if (bike.getBikeContainerSize() < bikeQuantity * bikeSize && bikeQuantity != 0) {
+	    throw new TooManyBikeException(
+		    "Cannot ship " + bikeQuantity + " bikes of the model " + bike.getSelectedBike().getBikeType());
 	}
-	return false;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-	if (validate(bike)) {
+	try {
+	    validate(bike);
 	    System.out.println("Success");
-	} else {
-	    System.out.println("Failure");
+	} catch (Exception e1) {
+	    System.out.println(e1.getMessage());
 	}
-
     }
-
 }
